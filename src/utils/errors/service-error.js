@@ -4,7 +4,7 @@ class ServiceError extends Error {
     constructor(
         message='Something went wrong',
         explanation='Service layer error',
-        statusCode=StatusCodes.INTERNAL_SERVER_ERROR
+        statusCode=500
         ){
             super();
          this.name='ServiceError';

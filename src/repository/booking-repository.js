@@ -1,6 +1,6 @@
 const {StatusCodes} = require('http-status-codes');
 
-const {Booking}=require('../models/index');
+const {Booking}=require('../models/index');//../models/index
 const { AppError,ValidationError } = require('../utils/errors/index');
 
 
@@ -10,6 +10,7 @@ class BookingRepository {
         const booking = await Booking.create(data);
         return booking;
     } catch (error) {
+        console.log("Repository Errpr : ");
         if(error.name=='SequelizeValidationError'){
             throw new ValidationError(error);
         }
